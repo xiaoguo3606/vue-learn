@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试</title>
+		<script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="hello">
+			<h1 v-once>{{message | check}}</h1>
+			<button type="button" @click="showMe">
+				Click Me!
+			</button>
+		</div>
+		
+		<script type="text/javascript">
+			var data={
+				message:'hello world'
+			};
+			var vm=new Vue({
+				el:'#hello',
+				data:data,
+				filters:{
+					check:function(value){
+						if(!value){
+							return '';
+						}else{
+							value=value.toString();
+							return value.charAt(0).toUpperCase()+value.slice(1);
+						}
+					}
+				},
+				methods:{
+					showMe:function(){
+						alert('Hello!');
+					}
+				}
+			});
+			console.log(vm.$data===data);
+			console.log(vm.$el===document.getElementById('hello'));
+		</script>
+	</body>
+</html>

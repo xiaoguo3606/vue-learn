@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Test05</title>
+		<script src="https://unpkg.com/vue@2.3.4/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.text-danger{
+				color: red;
+				font-weight: bold;
+			}
+			.static{
+				font-size: 20px;
+				color: #2C3E50;
+			}
+			.active{
+				font-size: 26px;
+				color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="static" v-bind:class='{ active:isActive ,'text-danger':hasError }'>
+			{{message}}
+		</div>
+		
+		
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'div',
+				data:{
+					isActive:true,
+					active:'active',
+					hasError:false,
+					message:'Hello World!'
+				}
+			});
+		</script>
+		
+	</body>
+</html>
