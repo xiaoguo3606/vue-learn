@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Markdown Editor</title>
+		<link rel="stylesheet" type="text/css" href="css/test07.css"/>
+	</head>
+	<body>
+		<div id="editor">
+			<textarea :value="input" @input="update"></textarea>
+			<div v-html="compiledMarkdown"></div>
+		</div>
+		
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/test07.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
